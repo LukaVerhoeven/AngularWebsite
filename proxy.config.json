@@ -1,0 +1,7 @@
+{
+    "/api": {
+        "target": "http://services.runescape.com/m=itemdb_rs",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

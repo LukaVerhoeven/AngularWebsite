@@ -1,0 +1,26 @@
+<ul *ngIf="Rsitems">
+  <li *ngFor="let items of Rsitems.items ">
+    <div *ngFor="let item of items | keyvalue ">
+      <p *ngIf="item.key == 'name'"> {{ item.value }} </p>
+      <img *ngIf="item.key == 'icon'" src="{{ item.value }}" alt="">
+    </div>
+
+  </li> 
+
+</ul>
+
+    <ul *ngIf="items">
+      <li *ngFor="let item of items">
+
+        <div *ngIf="item.length;then weapon else user"></div> 
+        <ng-template #weapon> 
+          <p> {{ item }} </p>  
+        </ng-template>
+        <ng-template #user>
+          <p *ngFor="let attribute of item | keyvalue">{{attribute.key}}: {{attribute.value}}</p>
+        </ng-template>
+
+        
+      </li>
+    </ul>
+  
