@@ -11,8 +11,10 @@ export class HomeComponent implements OnInit {
 
   Rsitems: Object;
   items: any[];
+  amountCatergories = 27;
 
   constructor(private data: DataService, db: AngularFireDatabase) {
+
     db.list('/items')
       .valueChanges().subscribe(items => {
         this.items = items;
@@ -21,8 +23,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data.getItems().subscribe(data => {
-      this.Rsitems = data;
+
+    this.data.getItems(0, 'a' , 1).subscribe(data => {
+      this.Rsitems =  data;
       console.log(this.Rsitems);
     });
   }
