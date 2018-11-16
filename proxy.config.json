@@ -1,7 +1,16 @@
 {
-    "/api": {
-        "target": "http://services.runescape.com/m=itemdb_rs",
-        "secure": false,
-        "changeOrigin": true
+  "api/exchange": {
+    "target": "https://rsbuddy.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/exchange": ""
     }
+
+  },
+  "/api": {
+    "target": "http://services.runescape.com/m=itemdb_oldschool",
+    "secure": false,
+    "changeOrigin": true
+  }
 }

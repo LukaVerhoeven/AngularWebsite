@@ -6,10 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private http: HttpClient ) { }
 
-  getItems() {
-    return this.http.get('api/catalogue/items.json?category=20&alpha=c&page=1');
+
+  constructor(private http: HttpClient ) { }
+  getItems(category: number, letter: string, page: number ) {
+    return this.http.get(
+      // '/exchange/summary.json');
+
+      // 'http://services.runescape.com/m=itemdb_rs/api/catalogue/detail.json?item=21787');
+
+    // return this.http.get(
+      '/api/catalogue/items.json?category=' + category + '&alpha=' + letter + '&page=' + page);
   }
 
 }
